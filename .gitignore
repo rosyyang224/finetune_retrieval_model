@@ -1,0 +1,23 @@
+# Ignore virtual environments
+flan-t5-env/
+.venv/
+venv/
+env/
+
+# Ignore Python cache and logs
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Ignore model checkpoints, weights, outputs
+*.pt
+*.bin
+*.h5
+*.ckpt
+*.safetensors
+checkpoints/
+outputs/
+logs/
+wandb/
+*.ipynb_checkpoints

@@ -1,0 +1,27 @@
+# Core ML libraries
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.12.0
+tokenizers>=0.13.0
+
+# Training and evaluation utilities
+scikit-learn>=1.3.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Logging and utilities
+tqdm>=4.65.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Optional: For better performance
+accelerate>=0.20.0
+# GPU support (uncomment if using GPU)
+# torch-audio  # if needed for your specific use case
+
+# Development and debugging
+ipython>=8.0.0
+jupyter>=1.0.0
+
+# File handling
+jsonlines>=3.1.0

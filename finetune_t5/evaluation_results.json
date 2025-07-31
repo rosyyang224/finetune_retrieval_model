@@ -1,0 +1,112 @@
+[
+  {
+    "query": "What are my current holdings?",
+    "prediction": "stockplpercent",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 14,
+    "word_count": 1,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "Show me my top 5 largest positions by market value",
+    "prediction": "marketvalueinbccy",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 17,
+    "word_count": 1,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "What stocks do I own in the technology sector?",
+    "prediction": "stockplpercent",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 14,
+    "word_count": 1,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "How many shares of Apple do I currently hold?",
+    "prediction": "3",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 1,
+    "word_count": 1,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "What is the total market value of my equity holdings?",
+    "prediction": "totalmarketvalueinbccy",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 22,
+    "word_count": 1,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "List all my bond holdings with their maturity dates",
+    "prediction": "List all my bond holdings with their maturity dates",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 51,
+    "word_count": 9,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "What percentage of my portfolio does Microsoft represent?",
+    "prediction": "percentage",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 10,
+    "word_count": 1,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "Show me all my holdings with unrealized gains",
+    "prediction": "\"filters\": [\"field\": \"marketplinbccy\", \"op\": \"gt\", \"value\": 0]",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 62,
+    "word_count": 7,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "What ETFs do I currently own?",
+    "prediction": "ETFs",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 4,
+    "word_count": 1,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "Which of my holdings have dividends scheduled this month?",
+    "prediction": "stockplpercent",
+    "is_valid_json": false,
+    "parsed_output": {},
+    "semantic_score": 0.0,
+    "schema_score": 0.0,
+    "prediction_length": 14,
+    "word_count": 1,
+    "generation_quality": "poor"
+  }
+]

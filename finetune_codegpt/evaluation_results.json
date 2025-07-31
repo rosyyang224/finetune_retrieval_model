@@ -1,0 +1,194 @@
+[
+  {
+    "query": "What are my current holdings?",
+    "prediction": "{\"filters\": [{\"field\": \"countryregion\", \"op\": \"eq\", \"value\": \"Cash\"}]}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "filters": [
+        {
+          "field": "countryregion",
+          "op": "eq",
+          "value": "Cash"
+        }
+      ]
+    },
+    "semantic_score": 0.0,
+    "schema_score": 0.8333333333333333,
+    "prediction_length": 70,
+    "word_count": 7,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "Show me my top 5 largest positions by market value",
+    "prediction": "{\"sort\": [{\"field\": \"totalmarketvalue\", \"order\": \"desc\"}], \"limit\": 5}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "sort": [
+        {
+          "field": "totalmarketvalue",
+          "order": "desc"
+        }
+      ],
+      "limit": 5
+    },
+    "semantic_score": 0.2,
+    "schema_score": 1.0,
+    "prediction_length": 70,
+    "word_count": 7,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "What stocks do I own in the technology sector?",
+    "prediction": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"Equity\"}], \"aggregate\": {\"operation\": \"avg\", \"field\": \"marketyield\"}}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "filters": [
+        {
+          "field": "assetclass",
+          "op": "eq",
+          "value": "Equity"
+        }
+      ],
+      "aggregate": {
+        "operation": "avg",
+        "field": "marketyield"
+      }
+    },
+    "semantic_score": 0.3,
+    "schema_score": 0.8749999999999999,
+    "prediction_length": 128,
+    "word_count": 12,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "How many shares of Apple do I currently hold?",
+    "prediction": "{\"filters\": [{\"field\": \"countryregion\", \"op\": \"eq\", \"value\": \"Apple\"}]}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "filters": [
+        {
+          "field": "countryregion",
+          "op": "eq",
+          "value": "Apple"
+        }
+      ]
+    },
+    "semantic_score": 0.0,
+    "schema_score": 0.8333333333333333,
+    "prediction_length": 71,
+    "word_count": 7,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "What is the total market value of my equity holdings?",
+    "prediction": "{\"aggregate\": {\"operation\": \"sum\", \"field\": \"totalmarketvalue\", \"group_by\": \"countryregion\"}}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "aggregate": {
+        "operation": "sum",
+        "field": "totalmarketvalue",
+        "group_by": "countryregion"
+      }
+    },
+    "semantic_score": 0.0,
+    "schema_score": 1.0,
+    "prediction_length": 93,
+    "word_count": 7,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "List all my bond holdings with their maturity dates",
+    "prediction": "{\"filters\": [{\"field\": \"maturitydate\", \"op\": \"gte\", \"value\": \"Bond\"}]}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "filters": [
+        {
+          "field": "maturitydate",
+          "op": "gte",
+          "value": "Bond"
+        }
+      ]
+    },
+    "semantic_score": 0.0,
+    "schema_score": 0.8333333333333333,
+    "prediction_length": 70,
+    "word_count": 7,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "What percentage of my portfolio does Microsoft represent?",
+    "prediction": "{\"filters\": [{\"field\": \"symbol\", \"op\": \"eq\", \"value\": \"MS\"}]}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "filters": [
+        {
+          "field": "symbol",
+          "op": "eq",
+          "value": "MS"
+        }
+      ]
+    },
+    "semantic_score": 0.0,
+    "schema_score": 0.8333333333333333,
+    "prediction_length": 61,
+    "word_count": 7,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "Show me all my holdings with unrealized gains",
+    "prediction": "{\"filters\": [{\"field\": \"marketplinsccy\", \"op\": \"ne\", \"value\": 0}]}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "filters": [
+        {
+          "field": "marketplinsccy",
+          "op": "ne",
+          "value": 0
+        }
+      ]
+    },
+    "semantic_score": 0.0,
+    "schema_score": 0.8333333333333333,
+    "prediction_length": 66,
+    "word_count": 7,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "What ETFs do I currently own?",
+    "prediction": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"ETF\"}]}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "filters": [
+        {
+          "field": "assetclass",
+          "op": "eq",
+          "value": "ETF"
+        }
+      ]
+    },
+    "semantic_score": 0.3,
+    "schema_score": 0.8333333333333333,
+    "prediction_length": 66,
+    "word_count": 7,
+    "generation_quality": "poor"
+  },
+  {
+    "query": "Which of my holdings have dividends scheduled this month?",
+    "prediction": "{\"filters\": [{\"field\": \"marketyield\", \"op\": \"eq\", \"value\": \"Cash\"}]}",
+    "is_valid_json": true,
+    "parsed_output": {
+      "filters": [
+        {
+          "field": "marketyield",
+          "op": "eq",
+          "value": "Cash"
+        }
+      ]
+    },
+    "semantic_score": 0.0,
+    "schema_score": 0.8333333333333333,
+    "prediction_length": 68,
+    "word_count": 7,
+    "generation_quality": "poor"
+  }
+]
