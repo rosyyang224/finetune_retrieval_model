@@ -16,8 +16,7 @@ __pycache__/
 *.h5
 *.ckpt
 *.safetensors
-checkpoints/
-outputs/
+finetune_*/**/*outputs/
 logs/
 wandb/
 *.ipynb_checkpoints
