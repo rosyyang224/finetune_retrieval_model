@@ -1,8 +1,0 @@
-{
-  "domain": "portfolio_management",
-  "task": "natural_language_to_json",
-  "optimization_level": "production",
-  "generation_strategy": "constrained_beam_search",
-  "model_version": "1.0",
-  "specialized_for": "financial_query_understanding"
-}
