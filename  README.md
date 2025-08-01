@@ -12,10 +12,10 @@ Each model implementation is contained in its own folder with modular, self-cont
 - **finetune_t5**: [Flan-T5-Small](https://huggingface.co/google/flan-t5-small)
   Sequence-to-sequence transformer model. t5-small worked much better than t5-base, because my dataset only has 1k entries. 
 
-- **finetune_codegpt**: [CodeGPT](https://huggingface.co/microsoft/CodeGPT-small-py)
+- **finetune_codegpt**: [CodeGPT-Small](https://huggingface.co/microsoft/CodeGPT-small-py)
   Language model specialized for code and structured data generation. Decent at generating correct JSON from user input, but needs to train on more data for correctness.
 
-- **finetune_deepseek**: [DeepSeek](https://huggingface.co/deepseek-ai)
+- **finetune_deepseek**: [Deepseek-Coder-1.3b-instruct](https://huggingface.co/deepseek-ai/deepseek-coder-1.3b-instruct)
   Significantly bigger model, broke my memory lol. But honestly not bad for the few epochs it ran!
 
 Each pipeline is fully independent. Run any by entering its folder and executing pipeline.py.
@@ -41,9 +41,6 @@ Each pipeline is fully independent. Run any by entering its folder and executing
    source finetune-env/bin/activate
    pip install --upgrade pip
    pip install -r requirements.txt
-
-   If you install any new packages, you can re-generate requirements.txt with:
-   pip freeze > requirements.txt
 ```
 
 3. **Initialize Weights & Biases (wandb)**
@@ -64,9 +61,7 @@ Each pipeline is fully independent. Run any by entering its folder and executing
    python pipeline.py
 ```
 
-   You can do the same for other models (e.g., finetune_codegpt, finetune_deepseek).
-
-   Outputs and logs will be saved according to the pipeline's config.
+   You can do the same for other models (e.g., finetune_codegpt, finetune_deepseek). Outputs and logs will be saved according to the pipeline's config.
 
 5. **(Optional) Validate Data**
 
@@ -114,7 +109,7 @@ You can adjust all core settings in ```config.py```
 - `metric_for_best_model`: Metric used for model selection (e.g., `"eval_loss"`).
 - `load_best_model_at_end`: Whether to reload the best model after training.
 
-#### Example: Dynamic config logic (PyTorch device-aware)
+#### Example: Device-aware config
 
 Depending on your device and available GPU memory, training batch sizes and precision flags may be set dynamically. You can increase or lower settings depending on what your device can manage.
 ```python
@@ -189,15 +184,15 @@ In each pipeline, wandb is initialized as follows:
 
 A helper script is provided to check and validate the contents of the `data/` directory:
 
-    ```bash
+```bash
     python validate_training_data.py
-    ```
+```
 
 This script will:
 - Verify that training, validation, and test datasets exist and are readable.
 - Print a summary of dataset statistics and any issues found so that you can add more data in undercovered areas.
 
-Always run this step after updating your data.
+Always run this after updating data.
 
 ---
 
