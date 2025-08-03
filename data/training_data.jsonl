@@ -1150,3 +1150,122 @@
 {"input": "What underperforming segments should be avoided if I want to diversify?", "output": "{\"filters\":[{\"field\":\"marketplpercentinsccy\",\"op\":\"lt\",\"value\":0}],\"aggregate\":{\"operation\":\"count\",\"field\":\"symbol\",\"group_by\":\"assettemplatetype\"}}"}
 {"input": "Which product types have high turnover but low average yield?", "output": "{\"aggregate\":{\"operation\":\"avg\",\"field\":\"marketyield\",\"group_by\":\"assettemplatetype\"}}"}
 {"input": "Which settlement currencies are prone to the most exchange rate volatility?", "output": "{\"aggregate\":{\"operation\":\"max\",\"field\":\"fxrate\",\"group_by\":\"sccy\"}}"}
+{"input": "What are my current holdings?", "output": "{}"}
+{"input": "Show me my top 5 largest positions by market value", "output": "{\"sort\": [{\"field\": \"totalmarketvalue\", \"order\": \"desc\"}], \"limit\": 5}"}
+{"input": "What stocks do I own in the technology sector?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"equity\"}, {\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"technology\"}]}"}
+{"input": "How many shares of Apple do I currently hold?", "output": "{\"filters\": [{\"field\": \"symbol\", \"op\": \"eq\", \"value\": \"AAPL\"}]}"}
+{"input": "What is the total market value of my equity holdings?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"equity\"}], \"aggregate\": {\"operation\": \"sum\", \"field\": \"totalmarketvalue\"}}"}
+{"input": "List all my bond holdings with their maturity dates", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}], \"sort\": [{\"field\": \"maturitydate\", \"order\": \"asc\"}]}"}
+{"input": "What percentage of my portfolio does Microsoft represent?", "output": "{\"filters\": [{\"field\": \"symbol\", \"op\": \"eq\", \"value\": \"MSFT\"}]}"}
+{"input": "Show me all my holdings with unrealized gains", "output": "{\"filters\": [{\"field\": \"marketplinbccy\", \"op\": \"gt\", \"value\": 0}]}"}
+{"input": "What ETFs do I currently own?", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"ETF\"}]}"}
+{"input": "Which of my holdings have dividends scheduled this month?", "output": "{\"filters\": [{\"field\": \"accrualtype\", \"op\": \"eq\", \"value\": \"dividend\"}]}"}
+{"input": "Show me my worst performing positions", "output": "{\"sort\": [{\"field\": \"marketplinbccy\", \"order\": \"asc\"}], \"limit\": 10}"}
+{"input": "What are my top 3 holdings by cost basis?", "output": "{\"sort\": [{\"field\": \"totalcostinbccy\", \"order\": \"desc\"}], \"limit\": 3}"}
+{"input": "List all positions worth more than $10,000", "output": "{\"filters\": [{\"field\": \"totalmarketvalue\", \"op\": \"gt\", \"value\": 10000}]}"}
+{"input": "Show me all my international holdings", "output": "{\"filters\": [{\"field\": \"countryregion\", \"op\": \"ne\", \"value\": \"US\"}]}"}
+{"input": "What bonds mature this year?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}, {\"field\": \"maturitydate\", \"op\": \"lt\", \"value\": \"2026-01-01\"}]}"}
+{"input": "Give me my average position size", "output": "{\"aggregate\": {\"operation\": \"avg\", \"field\": \"totalmarketvalue\"}}"}
+{"input": "Show me positions in USD currency", "output": "{\"filters\": [{\"field\": \"sccy\", \"op\": \"eq\", \"value\": \"USD\"}]}"}
+{"input": "What's the total count of my holdings?", "output": "{\"aggregate\": {\"operation\": \"count\", \"field\": \"symbol\"}}"}
+{"input": "Show me equity positions with negative P&L", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"equity\"}, {\"field\": \"marketplinbccy\", \"op\": \"lt\", \"value\": 0}]}"}
+{"input": "List my holdings sorted by symbol", "output": "{\"sort\": [{\"field\": \"symbol\", \"order\": \"asc\"}]}"}
+{"input": "What's my largest single position?", "output": "{\"aggregate\": {\"operation\": \"max\", \"field\": \"totalmarketvalue\"}}"}
+{"input": "Show me tech stocks worth over $5,000", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"technology\"}, {\"field\": \"totalmarketvalue\", \"op\": \"gt\", \"value\": 5000}]}"}
+{"input": "What's the total market value by asset class?", "output": "{\"aggregate\": {\"operation\": \"sum\", \"field\": \"totalmarketvalue\", \"group_by\": \"assetclass\"}}"}
+{"input": "Show me my most recent purchases", "output": "{\"sort\": [{\"field\": \"uuid\", \"order\": \"desc\"}], \"limit\": 10}"}
+{"input": "List positions with high yields", "output": "{\"filters\": [{\"field\": \"marketyield\", \"op\": \"gt\", \"value\": 5.0}]}"}
+{"input": "What holdings have CUSIP numbers?", "output": "{\"filters\": [{\"field\": \"cusip\", \"op\": \"ne\", \"value\": null}]}"}
+{"input": "Show me dividend-paying stocks", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"equity\"}, {\"field\": \"accrualtype\", \"op\": \"eq\", \"value\": \"dividend\"}]}"}
+{"input": "What's my total forex exposure?", "output": "{\"filters\": [{\"field\": \"sccy\", \"op\": \"ne\", \"value\": \"USD\"}], \"aggregate\": {\"operation\": \"sum\", \"field\": \"totalmarketvalue\"}}"}
+{"input": "Show me positions in multiple currencies", "output": "{\"filters\": [{\"field\": \"sccy\", \"op\": \"in\", \"value\": [\"EUR\", \"GBP\", \"JPY\"]}]}"}
+{"input": "List my smallest 5 positions", "output": "{\"sort\": [{\"field\": \"totalmarketvalue\", \"order\": \"asc\"}], \"limit\": 5}"}
+{"input": "What bonds have yields above 4%?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}, {\"field\": \"marketyield\", \"op\": \"gt\", \"value\": 4.0}]}"}
+{"input": "Show me average market value by country", "output": "{\"aggregate\": {\"operation\": \"avg\", \"field\": \"totalmarketvalue\", \"group_by\": \"countryregion\"}}"}
+{"input": "What positions have accrued interest?", "output": "{\"filters\": [{\"field\": \"accruedcashvaluesccy\", \"op\": \"gt\", \"value\": 0}]}"}
+{"input": "List holdings excluding cash positions", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"ne\", \"value\": \"cash\"}]}"}
+{"input": "Show me the median position size", "output": "{\"aggregate\": {\"operation\": \"median\", \"field\": \"totalmarketvalue\"}}"}
+{"input": "What are my retirement account holdings?", "output": "{\"filters\": [{\"field\": \"accounttype\", \"op\": \"in\", \"value\": [\"401k\", \"IRA\", \"Roth\"]}]}"}
+{"input": "Show me positions with P&L between -1000 and 1000", "output": "{\"filters\": [{\"field\": \"marketplinbccy\", \"op\": \"gte\", \"value\": -1000}, {\"field\": \"marketplinbccy\", \"op\": \"lte\", \"value\": 1000}]}"}
+{"input": "Count holdings by security type", "output": "{\"aggregate\": {\"operation\": \"count\", \"field\": \"symbol\", \"group_by\": \"securitytype\"}}"}
+{"input": "What are my fixed income holdings?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"in\", \"value\": [\"bond\", \"cd\", \"treasury\"]}]}"}
+{"input": "Show me positions sorted by yield descending", "output": "{\"sort\": [{\"field\": \"marketyield\", \"order\": \"desc\"}]}"}
+{"input": "What's my minimum position value?", "output": "{\"aggregate\": {\"operation\": \"min\", \"field\": \"totalmarketvalue\"}}"}
+{"input": "List European holdings only", "output": "{\"filters\": [{\"field\": \"countryregion\", \"op\": \"in\", \"value\": [\"DE\", \"FR\", \"GB\", \"IT\", \"ES\"]}]}"}
+{"input": "Show me tax-advantaged account positions", "output": "{\"filters\": [{\"field\": \"accounttype\", \"op\": \"ne\", \"value\": \"taxable\"}]}"}
+{"input": "What holdings have FX exposure?", "output": "{\"filters\": [{\"field\": \"forexpl\", \"op\": \"ne\", \"value\": 0}]}"}
+{"input": "Show me growth stocks in my portfolio", "output": "{\"filters\": [{\"field\": \"assettemplatetype\", \"op\": \"eq\", \"value\": \"growth\"}]}"}
+{"input": "List positions by P&L percentage descending", "output": "{\"sort\": [{\"field\": \"marketplpercentinsccy\", \"order\": \"desc\"}]}"}
+{"input": "What's the total cost basis of all holdings?", "output": "{\"aggregate\": {\"operation\": \"sum\", \"field\": \"totalcostinbccy\"}}"}
+{"input": "Show me maturing bonds in next 6 months", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}, {\"field\": \"maturitydate\", \"op\": \"lt\", \"value\": \"2025-02-03\"}]}"}
+{"input": "What securities are not in base currency?", "output": "{\"filters\": [{\"field\": \"totalmarketvaluesccy\", \"op\": \"ne\", \"value\": \"totalmarketvalueccy\"}]}"}
+{"input": "Show me commodity investments", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"commodity\"}]}"}
+{"input": "List holdings with stop losses", "output": "{\"filters\": [{\"field\": \"marketpricesccy\", \"op\": \"lt\", \"value\": \"costpricesccy\"}]}"}
+{"input": "What's my total portfolio value?", "output": "{\"aggregate\": {\"operation\": \"sum\", \"field\": \"totalmarketvalue\"}}"}
+{"input": "Show me my first 10 holdings alphabetically", "output": "{\"sort\": [{\"field\": \"symbol\", \"order\": \"asc\"}], \"limit\": 10}"}
+{"input": "Which stocks have declined more than 10%?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"equity\"}, {\"field\": \"marketplpercentinsccy\", \"op\": \"lt\", \"value\": -10}]}"}
+{"input": "Show me all my Canadian investments", "output": "{\"filters\": [{\"field\": \"countryregion\", \"op\": \"eq\", \"value\": \"CA\"}]}"}
+{"input": "What's my exposure to the financial sector?", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"financial\"}], \"aggregate\": {\"operation\": \"sum\", \"field\": \"totalmarketvalue\"}}"}
+{"input": "List positions with yield to maturity above 6%", "output": "{\"filters\": [{\"field\": \"ytm\", \"op\": \"gt\", \"value\": 6.0}]}"}
+{"input": "Show me my energy sector holdings", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"energy\"}]}"}
+{"input": "What bonds are trading at premium?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}, {\"field\": \"marketpricesccy\", \"op\": \"gt\", \"value\": \"costpricesccy\"}]}"}
+{"input": "Give me my healthcare investments", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"healthcare\"}]}"}
+{"input": "Show positions sorted by cost basis", "output": "{\"sort\": [{\"field\": \"totalcostinbccy\", \"order\": \"desc\"}]}"}
+{"input": "What's the count of positions by account type?", "output": "{\"aggregate\": {\"operation\": \"count\", \"field\": \"symbol\", \"group_by\": \"accounttype\"}}"}
+{"input": "List my consumer goods investments", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"consumer\"}]}"}
+{"input": "Show me positions with market cap data", "output": "{\"filters\": [{\"field\": \"marketvalueinbccy\", \"op\": \"gt\", \"value\": 0}]}"}
+{"input": "What are my utility sector holdings?", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"utility\"}]}"}
+{"input": "Show me government bonds only", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}, {\"field\": \"assettemplatetype\", \"op\": \"eq\", \"value\": \"government\"}]}"}
+{"input": "What positions have forex gains?", "output": "{\"filters\": [{\"field\": \"forexpl\", \"op\": \"gt\", \"value\": 0}]}"}
+{"input": "List my industrial sector investments", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"industrial\"}]}"}
+{"input": "Show me Asian market exposure", "output": "{\"filters\": [{\"field\": \"countryregion\", \"op\": \"in\", \"value\": [\"JP\", \"CN\", \"KR\", \"HK\", \"SG\"]}]}"}
+{"input": "What's my average yield across all holdings?", "output": "{\"aggregate\": {\"operation\": \"avg\", \"field\": \"marketyield\"}}"}
+{"input": "Show me telecommunications investments", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"telecom\"}]}"}
+{"input": "Which positions are in emerging markets?", "output": "{\"filters\": [{\"field\": \"fxmarket\", \"op\": \"eq\", \"value\": \"emerging\"}]}"}
+{"input": "List my real estate investments", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"realestate\"}]}"}
+{"input": "Show corporate bonds with high ratings", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}, {\"field\": \"assettemplatetype\", \"op\": \"eq\", \"value\": \"corporate\"}]}"}
+{"input": "What's my materials sector exposure?", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"materials\"}]}"}
+{"input": "Show me positions with accrued dividends", "output": "{\"filters\": [{\"field\": \"accrualtype\", \"op\": \"eq\", \"value\": \"dividend\"}, {\"field\": \"accrualsccy\", \"op\": \"gt\", \"value\": 0}]}"}
+{"input": "List my top 20 performers", "output": "{\"sort\": [{\"field\": \"marketplpercentinsccy\", \"order\": \"desc\"}], \"limit\": 20}"}
+{"input": "What positions are denominated in Euros?", "output": "{\"filters\": [{\"field\": \"sccy\", \"op\": \"eq\", \"value\": \"EUR\"}]}"}
+{"input": "Show me my consumer discretionary holdings", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"consumer_discretionary\"}]}"}
+{"input": "Which bonds mature in the next year?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}, {\"field\": \"maturitydate\", \"op\": \"lt\", \"value\": \"2026-08-03\"}]}"}
+{"input": "What's my total unrealized P&L?", "output": "{\"aggregate\": {\"operation\": \"sum\", \"field\": \"marketplinbccy\"}}"}
+{"input": "Show me positions in British Pounds", "output": "{\"filters\": [{\"field\": \"sccy\", \"op\": \"eq\", \"value\": \"GBP\"}]}"}
+{"input": "List my biotechnology investments", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"biotech\"}]}"}
+{"input": "What are my largest losers?", "output": "{\"sort\": [{\"field\": \"marketplinbccy\", \"order\": \"asc\"}], \"limit\": 10}"}
+{"input": "Show me municipal bonds", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}, {\"field\": \"assettemplatetype\", \"op\": \"eq\", \"value\": \"municipal\"}]}"}
+{"input": "What positions have negative forex impact?", "output": "{\"filters\": [{\"field\": \"forexpl\", \"op\": \"lt\", \"value\": 0}]}"}
+{"input": "List semiconductor investments", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"semiconductor\"}]}"}
+{"input": "Show me my Latin American exposure", "output": "{\"filters\": [{\"field\": \"countryregion\", \"op\": \"in\", \"value\": [\"BR\", \"MX\", \"AR\", \"CL\"]}]}"}
+{"input": "What's the median P&L of my positions?", "output": "{\"aggregate\": {\"operation\": \"median\", \"field\": \"marketplinbccy\"}}"}
+{"input": "Give me a breakdown of all my active stock holdings", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"equity\"}]}"}
+{"input": "Show my top 3 holdings sorted by current value", "output": "{\"sort\": [{\"field\": \"marketvalueinbccy\", \"order\": \"desc\"}], \"limit\": 3}"}
+{"input": "Which companies in my portfolio are in the healthcare industry?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"healthcare\"}]}"}
+{"input": "How much Tesla stock do I currently hold?", "output": "{\"filters\": [{\"field\": \"symbol\", \"op\": \"eq\", \"value\": \"TSLA\"}], \"aggregate\": {\"operation\": \"sum\", \"field\": \"marketplinsccy\"}}"}
+{"input": "What's the combined value of my fixed income investments?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"fixed income\"}], \"aggregate\": {\"operation\": \"sum\", \"field\": \"marketvalueinbccy\"}}"}
+{"input": "List my government bonds ordered by earliest maturity", "output": "{\"filters\": [{\"field\": \"securitytype\", \"op\": \"eq\", \"value\": \"government bond\"}], \"sort\": [{\"field\": \"maturitydate\", \"order\": \"asc\"}]}"}
+{"input": "What portion of my total portfolio is made up by Alphabet?", "output": "{\"filters\": [{\"field\": \"symbol\", \"op\": \"eq\", \"value\": \"GOOGL\"}], \"aggregate\": {\"operation\": \"sum\", \"field\": \"marketplpercentinsccy\"}}"}
+{"input": "Find all holdings currently trading above cost", "output": "{\"filters\": [{\"field\": \"marketvalueinbccy\", \"op\": \"gt\", \"value\": 0}]}"}
+{"input": "Which index funds do I hold right now?", "output": "{\"filters\": [{\"field\": \"assettemplatetype\", \"op\": \"eq\", \"value\": \"index fund\"}]}"}
+{"input": "Are any of my assets paying out this quarter?", "output": "{\"filters\": [{\"field\": \"accrualtype\", \"op\": \"eq\", \"value\": \"dividend\"}]}"}
+{"input": "How much of my portfolio is invested in financial companies?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"financials\"}], \"aggregate\": {\"operation\": \"sum\", \"field\": \"marketplpercentinsccy\"}}"}
+{"input": "Show me my holdings that mature in the next 6 months", "output": "{\"filters\": [{\"field\": \"maturitydate\", \"op\": \"lt\", \"value\": \"2026-02-01\"}], \"sort\": [{\"field\": \"maturitydate\", \"order\": \"asc\"}]}"}
+{"input": "What are the top 10 positions sorted by unrealized gains?", "output": "{\"sort\": [{\"field\": \"marketvalueinbccy\", \"order\": \"desc\"}], \"limit\": 10}"}
+{"input": "Which of my assets are denominated in USD?", "output": "{\"filters\": [{\"field\": \"sccy\", \"op\": \"eq\", \"value\": \"USD\"}]}"}
+{"input": "How many different equity symbols do I hold?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"equity\"}], \"aggregate\": {\"operation\": \"count\", \"field\": \"symbol\"}}"}
+{"input": "What is the average market price of my technology stocks?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"technology\"}], \"aggregate\": {\"operation\": \"avg\", \"field\": \"marketpricesccy\"}}"}
+{"input": "List all securities with more than 10000 market value", "output": "{\"filters\": [{\"field\": \"marketvalueinbccy\", \"op\": \"gt\", \"value\": 10000}]}"}
+{"input": "Which holdings do I have in Japan or South Korea?", "output": "{\"filters\": [{\"field\": \"countryregion\", \"op\": \"in\", \"value\": [\"Japan\", \"South Korea\"]}]}"}
+{"input": "Show me all foreign exchange positions", "output": "{\"filters\": [{\"field\": \"assettemplatetype\", \"op\": \"eq\", \"value\": \"FX\"}]}"}
+{"input": "How many bonds do I own by security type?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}], \"aggregate\": {\"operation\": \"count\", \"field\": \"securitytype\", \"group_by\": \"securitytype\"}}"}
+{"input": "Give me the minimum yield among all bonds", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"bond\"}], \"aggregate\": {\"operation\": \"min\", \"field\": \"marketyield\"}}"}
+{"input": "Which assets have accrued interest greater than 100?", "output": "{\"filters\": [{\"field\": \"accruedcashvaluesccy\", \"op\": \"gt\", \"value\": 100}]}"}
+{"input": "What's the total cost basis of my equity investments?", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"eq\", \"value\": \"equity\"}], \"aggregate\": {\"operation\": \"sum\", \"field\": \"totalcostinbccy\"}}"}
+{"input": "Sort my ETFs by cost in descending order", "output": "{\"filters\": [{\"field\": \"assettemplatetype\", \"op\": \"eq\", \"value\": \"ETF\"}], \"sort\": [{\"field\": \"totalcostinbccy\", \"order\": \"desc\"}]}"}
+{"input": "How many assets are in each asset class?", "output": "{\"aggregate\": {\"operation\": \"count\", \"field\": \"symbol\", \"group_by\": \"assetclass\"}}"}
+{"input": "Show my positions in emerging markets", "output": "{\"filters\": [{\"field\": \"countryregion\", \"op\": \"in\", \"value\": [\"India\", \"Brazil\", \"Vietnam\"]}]}"}
+{"input": "What's the average fx rate for my foreign holdings?", "output": "{\"filters\": [{\"field\": \"sccy\", \"op\": \"ne\", \"value\": \"USD\"}], \"aggregate\": {\"operation\": \"avg\", \"field\": \"fxrate\"}}"}
+{"input": "Which assets have a yield above 3 percent?", "output": "{\"filters\": [{\"field\": \"marketyield\", \"op\": \"gt\", \"value\": 3}]}"}
+{"input": "List all my non-equity investments", "output": "{\"filters\": [{\"field\": \"assetclass\", \"op\": \"ne\", \"value\": \"equity\"}]}"}
+{"input": "Group my portfolio by region and show total value", "output": "{\"aggregate\": {\"operation\": \"sum\", \"field\": \"marketvalueinbccy\", \"group_by\": \"countryregion\"}}"}
