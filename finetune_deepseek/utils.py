@@ -80,7 +80,7 @@ def add_length_column(examples):
                          for inp, out in zip(examples["input"], examples["output"])]
     return examples
 
-def load_training_data(file_path: str = ".../data/training_data.jsonl", 
+def load_training_data(file_path: str = "../data/training_data.jsonl", 
                       validation_split: bool = True, 
                       validation_size: float = 0.1) -> Tuple[Dataset, Optional[Dataset]]:
     """Load and prepare training data with optional validation split"""
