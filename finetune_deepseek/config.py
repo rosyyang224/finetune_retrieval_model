@@ -115,3 +115,9 @@ OPTIMIZATION_CONFIG = {
     "use_length_grouping": True,
     "compile_model": PYTHON_VERSION_COMPATIBLE,
 }
+
+GENERATION_KWARGS = {
+    "num_beams": 4,
+    "max_length": 256,
+    "early_stopping": True
+}

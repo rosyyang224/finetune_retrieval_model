@@ -1,30 +1,23 @@
 import logging
+import json
 from trainer import train_model
 from evaluate import PortfolioQueryEvaluator, load_test_queries
+from config import GENERATION_KWARGS
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 def main():
-    # Step 1: Train the model
     logger.info("Starting full pipeline: training + evaluation")
     final_model_path = train_model()
-
-    # Step 2: Evaluate the model
     logger.info("Starting evaluation after training...")
+
     evaluator = PortfolioQueryEvaluator(model_path=final_model_path)
-
     test_queries = load_test_queries("../data/test_data.json")
-    generation_kwargs = {
-        "num_beams": 4,
-        "max_length": 256,
-        "early_stopping": True
-    }
+    results = evaluator.evaluate_test_set(test_queries, **GENERATION_KWARGS)
 
-    results = evaluator.evaluate_test_set(test_queries, **generation_kwargs)
     logger.info(f"Finished evaluation with {len(results)} results")
 
-    import json
     with open("evaluation_results.json", "w") as f:
         json.dump(results, f, indent=2)
     logger.info("Saved evaluation results to evaluation_results.json")
