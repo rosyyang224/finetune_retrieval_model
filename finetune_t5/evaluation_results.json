@@ -12,45 +12,47 @@
   },
   {
     "query": "Show me my top 5 largest positions by market value",
-    "prediction": "marketvalueinbccy",
-    "is_valid_json": false,
-    "parsed_output": {},
+    "prediction": "\"marketvalue\": 5",
+    "is_valid_json": true,
+    "parsed_output": {
+      "marketvalue": 5
+    },
     "semantic_score": 0.0,
     "schema_score": 0.0,
-    "prediction_length": 17,
-    "word_count": 1,
+    "prediction_length": 16,
+    "word_count": 2,
     "generation_quality": "poor"
   },
   {
     "query": "What stocks do I own in the technology sector?",
-    "prediction": "stockplpercent",
+    "prediction": "stocks",
     "is_valid_json": false,
     "parsed_output": {},
     "semantic_score": 0.0,
     "schema_score": 0.0,
-    "prediction_length": 14,
+    "prediction_length": 6,
     "word_count": 1,
     "generation_quality": "poor"
   },
   {
     "query": "How many shares of Apple do I currently hold?",
-    "prediction": "3",
+    "prediction": "3000",
     "is_valid_json": false,
     "parsed_output": {},
     "semantic_score": 0.0,
     "schema_score": 0.0,
-    "prediction_length": 1,
+    "prediction_length": 4,
     "word_count": 1,
     "generation_quality": "poor"
   },
   {
     "query": "What is the total market value of my equity holdings?",
-    "prediction": "totalmarketvalueinbccy",
+    "prediction": "totalmarketvalue",
     "is_valid_json": false,
     "parsed_output": {},
     "semantic_score": 0.0,
     "schema_score": 0.0,
-    "prediction_length": 22,
+    "prediction_length": 16,
     "word_count": 1,
     "generation_quality": "poor"
   },
@@ -78,12 +80,12 @@
   },
   {
     "query": "Show me all my holdings with unrealized gains",
-    "prediction": "\"filters\": [\"field\": \"marketplinbccy\", \"op\": \"gt\", \"value\": 0]",
+    "prediction": "\"sort\": [\"field\": \"marketplinbccy\", \"order\": \"desc\"], \"limit\": 5",
     "is_valid_json": false,
     "parsed_output": {},
     "semantic_score": 0.0,
     "schema_score": 0.0,
-    "prediction_length": 62,
+    "prediction_length": 64,
     "word_count": 7,
     "generation_quality": "poor"
   },

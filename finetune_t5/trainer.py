@@ -14,13 +14,11 @@ from config import (
     create_model
 )
 from utils import (
-    setup_model_and_tokenizer,
     create_preprocess_function,
     add_length_column,
     load_training_data,
     create_enhanced_compute_metrics
 )
-from portfolio_model import PortfolioQueryT5Model
 
 warnings.filterwarnings("ignore", category=UserWarning)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -36,13 +34,13 @@ def train_model():
 
     wandb.init( 
         project="query-to-filter",
-        name="small_cosine_beams2_smoothing0.0_lr0.9e4_batch4",
+        name="small_cosine_beams2_smoothing0.0_lr0.9e4_batch4_norandomeval",
         config={
             "model": MODEL_NAME,
             "model_class": "PortfolioQueryT5Model",
             "domain": "portfolio_management",
             "task": "natural_language_to_json",
-            "data_size": 1150,
+            "data_size": 1270,
             "optimization_config": OPTIMIZATION_CONFIG
         }
     )
