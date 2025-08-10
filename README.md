@@ -193,3 +193,8 @@ Always run this after updating data.
   - Side-by-side comparisons of multiple runs for model and hyperparameter selection.
 
 You can further group, rename, or annotate your runs directly in the wandb web interface for better experiment management.
+
+<img width="477" height="243" alt="Screenshot 2025-08-11 at 2 57 11 AM" src="https://github.com/user-attachments/assets/87a0b152-39b7-4ace-83f4-33609da418d6" />
+<img width="475" height="239" alt="Screenshot 2025-08-11 at 2 57 23 AM" src="https://github.com/user-attachments/assets/0e41f9ed-f0e1-47ac-8e16-0e4cc1a63c14" />
+<img width="475" height="242" alt="Screenshot 2025-08-11 at 2 57 30 AM" src="https://github.com/user-attachments/assets/6b2efcc8-b64e-4387-ac5d-c9c0810571cd" />
+
